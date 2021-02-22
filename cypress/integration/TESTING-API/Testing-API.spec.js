@@ -12,7 +12,31 @@ describe('Lista de usuarios', () => {
     })  
 });
 
-describe('Cadastro de usuario - login - cadastro de produto', function () {
+describe('Lista de carrinhos', () => {
+
+    Cypress.config('baseUrl', 'https://serverest.dev')
+
+    it ('Lista de carrinhos', () => {
+        cy.request('GET','/carrinhos').then((response) =>{
+            expect(response).to.have.property('status', 200)
+            expect(response.body).to.not.be.null   
+        })
+    })  
+});
+
+describe('Lista de produtos', () => {
+
+    Cypress.config('baseUrl', 'https://serverest.dev')
+
+    it ('Lista de produtos', () => {
+        cy.request('GET','/produtos').then((response) =>{
+            expect(response).to.have.property('status', 200)
+            expect(response.body).to.not.be.null   
+        })
+    })  
+});
+
+describe('Cadastro de usuario - Login - Cadastro de produto', function () {  
     let name = faker.name.firstName(); //Names fake
     let Email = faker.internet.email();
     let Api_Token
@@ -45,6 +69,7 @@ it ('Cadastro de usuario code 400', () => {
         
         });
     });
+    
     
 it('Realizando login Status code 200', function () {
 
