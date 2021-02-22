@@ -1,0 +1,23 @@
+{
+  "name": "Test_anima_QA_API",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RangelMarques/Test_anima_QA_API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RangelMarques/Test_anima_QA_API/issues"
+  },
+  "homepage": "https://github.com/RangelMarques/Test_anima_QA_API#readme",
+  "dependencies": {
+    "faker-br": "^0.4.1"
+  }
+}
