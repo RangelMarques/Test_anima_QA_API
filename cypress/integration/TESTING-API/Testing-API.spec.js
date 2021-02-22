@@ -80,7 +80,7 @@ it('Realizando login Status code 400', function () {
         });
     });
 
-    it('Realizando cadastro de produto', function () {
+    it('Realizando cadastro de produto code 200', function () {
         let NameProduct = faker.commerce.productName();
         let Description = faker.commerce.productName();
         
@@ -102,6 +102,31 @@ it('Realizando login Status code 400', function () {
         }).then(response => {
             expect(response.status).to.eq(201); // Status Validation
             expect(response.body.message).to.equal("Cadastro realizado com sucesso");
+        });
+    });
+
+    it('Realizando cadastro de produto code 400', function () {
+        // let NameProduct = faker.commerce.productName();
+        // let Description = faker.commerce.productName();
+        
+        cy.request({
+            method: 'POST',
+            url: 'https://serverest.dev/produtos',
+            failOnStatusCode: false,
+            form: true,
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+                'Authorization': `${Api_Token}`
+            },
+            body: {
+                "nome": `Produto teste`,
+                "preco": "470",
+                "descricao": `Descricao teste`,
+                "quantidade": "5"
+            }
+        }).then(response => {
+            expect(response.status).to.eq(400); // Status Validation
+            expect(response.body.message).to.equal("Já existe produto com esse nome");
         });
     });
 });
