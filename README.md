@@ -1,4 +1,3 @@
-# Test_anima_QA_API
 
 ## Para testar:
 
