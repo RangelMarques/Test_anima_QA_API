@@ -106,8 +106,6 @@ it('Realizando login Status code 400', function () {
     });
 
     it('Realizando cadastro de produto code 400', function () {
-        // let NameProduct = faker.commerce.productName();
-        // let Description = faker.commerce.productName();
         
         cy.request({
             method: 'POST',
@@ -119,7 +117,7 @@ it('Realizando login Status code 400', function () {
                 'Authorization': `${Api_Token}`
             },
             body: {
-                "nome": `Produto teste`,
+                "nome": `Produto teste`, //passando produto ja cadastrado
                 "preco": "470",
                 "descricao": `Descricao teste`,
                 "quantidade": "5"
